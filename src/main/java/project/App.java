@@ -102,31 +102,4 @@ public class App {
     }
 
 
-    // private static String showViewAdsMenu(Scanner scanner) {
-
-    //     System.out.println("\n\nView Ads Menu");
-    //     System.out.println("\nSelect options:");
-    //     System.out.println("1. View all Ads");
-    //     System.out.println("2. View Ad of type (enter type)");
-
-    //     System.out.println("Selected option: ");
-
-    //     List<AdData> adsList;
-    //     String option = scanner.next();
-    //     switch(option) {
-    //         case "1":
-    //             adsList = adHandler.getAllAds();
-    //             break;
-    //         case "3":
-                
-    //         default:
-    //             adsList = adHandler.getAdsByType(option);
-    //             break;
-                
-    //     }
-    //     System.out.println(adsList);
-
-    //     return option;
-    // }
-
 }
