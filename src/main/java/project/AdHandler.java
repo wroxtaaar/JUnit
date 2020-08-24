@@ -34,7 +34,7 @@ public class AdHandler {
         this.sellerMap.put(1, new Seller("Radix LLC"));
         this.sellerMap.put(2, new Seller("13to19"));
         
-        String[] typesArray = {"toys", "vehicle", "furniture", "clothes"};
+        String[] typesArray = {"toy", "vehicle", "furniture", "clothes"};
         this.typesList = Arrays.asList(typesArray);
     }
 
@@ -94,7 +94,7 @@ public class AdHandler {
     }
 
     public boolean isBetween(LocalTime timeToCheck, LocalTime startTime, LocalTime endTime) {
-        return (timeToCheck.isBefore(startTime)) && timeToCheck.isBefore(endTime);
+        return (timeToCheck.isBefore(startTime)) && timeToCheck.isAfter(endTime);
     }
 
     /*

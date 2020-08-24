@@ -1,5 +1,13 @@
 package project;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Scanner;
+
 public class Seller {
     
     private static int count = 0;
@@ -10,6 +18,17 @@ public class Seller {
     public Seller(String name) {
         this.name = name;
         this.ID = count++;
+    }
+
+    public static List<String> readSellerList(Scanner scanner) throws FileNotFoundException {
+        List<String> sellers = new ArrayList<>();
+
+        while(scanner.hasNext()) {
+            String sellerName = scanner.nextLine().trim();
+            sellers.add(sellerName);
+        }
+
+        return sellers;
     }
 
     public String getName() {

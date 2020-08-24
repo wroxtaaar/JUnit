@@ -6,22 +6,23 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.io.FileNotFoundException;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.List;
-import java.util.Map;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestTemplate;
 
 public class AdHandlerTest {
 
-    private static AdHandler adHandler;
+    private static AdHandler adHandler = new AdHandler();
 
+    @BeforeEach
+    public void setup() {
+        adHandler = new AdHandler();
+    }
     @Test
     public void testNewAdHandlerCreatesEmptyAdList() throws FileNotFoundException {
-        adHandler = new AdHandler();
+        // adHandler = new AdHandler();
 
         assertEquals(0, adHandler.getAllAdsList().size());
     }
@@ -29,7 +30,7 @@ public class AdHandlerTest {
     @Test
     public void testAddingSingleAdCreatesOneAd() throws FileNotFoundException {
         // Given
-        adHandler = new AdHandler();
+        // adHandler = new AdHandler();
 
         // When
         adHandler.addNewAd("djfksld", "toy", 0);
@@ -41,7 +42,7 @@ public class AdHandlerTest {
     @Test
     public void testAddingMultipleAdsCreatesMultipleAd() throws FileNotFoundException {
         // Given
-        adHandler = new AdHandler();
+        // adHandler = new AdHandler();
 
         // When
         adHandler.addNewAd("djfksld", "toy", 0);
