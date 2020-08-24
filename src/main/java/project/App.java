@@ -67,7 +67,7 @@ public class App {
         int sellerID = scanner.nextInt();
         scanner.nextLine();
 
-        System.out.println("Ad Type:");
+        System.out.println("Ad Type (toy/vehicle/furniture/clothes):");
         String type = scanner.nextLine();
 
         System.out.println("Ad Description:");
