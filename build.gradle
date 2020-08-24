@@ -56,5 +56,8 @@ test{
 
 
 }
+run {
+    standardInput = System.in
+}
 
 mainClassName = 'project.App' 
