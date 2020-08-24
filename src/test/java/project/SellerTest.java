@@ -14,40 +14,35 @@ class SellerTest {
 
     public static Scanner scanner;
     
-    @AfterAll
-    public static void teardown() {
-        if (scanner != null) {
-            scanner.close();
-        }
-    }
+    // TODO - Milestone 4 - Uncomment these methods
     
-    @Test
-    public void testSellersList() throws FileNotFoundException {
-        // Given
-        File typesFile = new File("src/test/resources/sellers.txt");
-        scanner = new Scanner(typesFile);
+    // @Test
+    // public void testSellersList() throws FileNotFoundException {
+    //     // Given
+    //     File typesFile = new File("src/test/resources/sellers.txt");
+    //     scanner = new Scanner(typesFile);
 
-        // When
-        List<String> sellersList = Seller.readSellerList(scanner);
+    //     // When
+    //     List<String> sellersList = Seller.readSellerList(scanner);
 
-        // Then
-        assertEquals(3, sellersList.size());
+    //     // Then
+    //     assertEquals(3, sellersList.size());
 
-        scanner.close();
-    }
+    //     scanner.close();
+    // }
 
-    @Test
-    public void testSellersLargeList() throws FileNotFoundException {
-        // Given
-        File typesFile = new File("src/test/resources/sellersLarge.txt");
-        scanner = new Scanner(typesFile);
+    // @Test
+    // public void testSellersLargeList() throws FileNotFoundException {
+    //     // Given
+    //     File typesFile = new File("src/test/resources/sellersLarge.txt");
+    //     scanner = new Scanner(typesFile);
 
-        // When
-        List<String> sellersList = Seller.readSellerList(scanner);
+    //     // When
+    //     List<String> sellersList = Seller.readSellerList(scanner);
 
-        // Then
-        assertEquals(45, sellersList.size());
+    //     // Then
+    //     assertEquals(45, sellersList.size());
 
-        scanner.close();
-    }
+    //     scanner.close();
+    // }
 }
