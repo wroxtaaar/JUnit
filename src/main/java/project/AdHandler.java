@@ -34,8 +34,9 @@ public class AdHandler {
         this.sellerMap.put(1, new Seller("Radix LLC"));
         this.sellerMap.put(2, new Seller("13to19"));
         
-        String[] typesArray = {"toy", "vehicle", "furniture", "clothes"};
-        this.typesList = Arrays.asList(typesArray);
+        // String[] typesArray = {"toy", "vehicle", "furniture", "clothes"};
+        // this.typesList = Arrays.asList(typesArray);
+        this.typesList = readAdTypes("src/main/resources/types.txt");
     }
 
     public void addNewAd(String description, String type, 
@@ -160,6 +161,27 @@ public class AdHandler {
             throw new RuntimeException(msg);
         }
     }
+
+    
+    private List<String> readAdTypes(String filePath) {
+        List<String> list = new ArrayList<>();
+
+        File typesFile = new File(filePath);
+
+        try {
+            Scanner scanner = new Scanner(typesFile);
+        
+            while(scanner.hasNext()) {
+                String typeRead = scanner.next().trim();
+                list.add(typeRead);
+            }
+        } catch (FileNotFoundException ex) {
+            ex.printStackTrace();
+        }
+   
+
+        return list;
+    }
     
     public List<AdData> getAllAds() {
         return this.allAdsList;
@@ -230,18 +252,4 @@ public class AdHandler {
     //     return sellers;
     // }
 
-    // private List<String> readAdTypes(String filePath) throws FileNotFoundException {
-    //     List<String> list = new ArrayList<>();
-
-    //     File typesFile = new File(filePath);
-
-    //     Scanner scanner = new Scanner(typesFile);
-        
-    //     while(scanner.hasNext()) {
-    //         String typeRead = scanner.next().trim();
-    //         list.add(typeRead);
-    //     }
-
-    //     return list;
-    // }
 }
