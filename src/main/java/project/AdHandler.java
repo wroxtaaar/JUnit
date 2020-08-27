@@ -1,5 +1,6 @@
 package project;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
@@ -9,6 +10,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Scanner;
 
 public class AdHandler {
     
@@ -30,8 +32,9 @@ public class AdHandler {
         this.sellerMap.put(1, new Seller("Radix LLC"));
         this.sellerMap.put(2, new Seller("13to19"));
         
-        String[] typesArray = {"toy", "vehicle", "furniture", "clothes"};
-        this.typesList = Arrays.asList(typesArray);
+        // String[] typesArray = {"toy", "vehicle", "furniture", "clothes"};
+        // this.typesList = Arrays.asList(typesArray);
+        this.typesList = readAdTypes("src/main/resources/types.txt");
     }
 
     public void addNewAd(String description, String type, 
@@ -168,6 +171,24 @@ public class AdHandler {
     //     }
     // }
     
+    private List<String> readAdTypes(String filePath) {
+        List<String> list = new ArrayList<>();
+
+        File typesFile = new File(filePath);
+
+        try {
+            Scanner scanner = new Scanner(typesFile);
+        
+            while(scanner.hasNext()) {
+                String typeRead = scanner.next().trim();
+                list.add(typeRead);
+            }
+        } catch (FileNotFoundException ex) {
+            ex.printStackTrace();
+        }
+        return list;
+    }
+
     public List<AdData> getAllAds() {
         return this.allAdsList;
     }
